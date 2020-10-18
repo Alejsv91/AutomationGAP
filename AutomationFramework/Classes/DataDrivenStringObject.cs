@@ -12,8 +12,8 @@ namespace AutomationFramework.Classes
             Keyword = keyword;
             Value = value;
         }
-        string TcName { get; }
-        string Keyword { get; }
-        string Value { get;  }
+        public string TcName { get; }
+        public string Keyword { get; }
+        public string Value { get;  }
     }
 }

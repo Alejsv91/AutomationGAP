@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.Enums;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using System;
@@ -21,9 +22,16 @@ namespace AutomationFramework
             switch (driverType)
             {
                 case DriverType.ChromeDriver:
-                    return new ChromeDriver(DriverLocalPath);
+                    return new ChromeDriver(DriverLocalPath, AddChromeBrowserOptions());
             }
             return null;
+        }
+
+        public ChromeOptions AddChromeBrowserOptions()
+        {
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.AddArgument("--kiosk");
+            return chromeOptions;
         }
         #endregion
     }

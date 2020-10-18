@@ -2,17 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace AutomationFramework.Utilities
 {
     public class DataAccess
     {
+        #region constructor
         public DataAccess(string currentTestMethodName)
         {
             StreamReader sr = new StreamReader(@"DataDriven.csv");
-            var TestCasesInformation = new List<DataDrivenStringObject>();
+            TestCasesInformation = new List<DataDrivenStringObject>();
             int x = 0;
             while (!sr.EndOfStream)
             {
@@ -26,12 +29,16 @@ namespace AutomationFramework.Utilities
             }
             sr.Close();
         }
+        #endregion
         #region properties
-
+        public List<DataDrivenStringObject> TestCasesInformation { get; set; }
         #endregion
 
         #region methods
-
+        public string getParameterValue(string parameterName)
+        {
+            return TestCasesInformation.Where(x => x.Keyword == parameterName).FirstOrDefault().Value.ToString();
+        }
         #endregion
 
 
