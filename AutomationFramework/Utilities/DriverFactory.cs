@@ -30,7 +30,7 @@ namespace AutomationFramework
         public ChromeOptions AddChromeBrowserOptions()
         {
             ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.AddArgument("--kiosk");
+            //chromeOptions.AddArgument("--kiosk");
             return chromeOptions;
         }
         #endregion
