@@ -53,8 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Pages\BasePageModel.cs" />
+    <Compile Include="Pages\CheckOutPage.cs" />
+    <Compile Include="Pages\ProductPage.cs" />
+    <Compile Include="Test\BaseTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\ProductTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
