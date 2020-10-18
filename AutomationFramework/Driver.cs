@@ -13,19 +13,19 @@ namespace AutomationFramework
 {
     public class Driver
     {
-        public static  FactoryDriver(DriverType driverType)
-        {
-            DriverLocalPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            switch (driverType)
-            {
-                case DriverType.ChromeDriver:
-                    TestScenarioDriver = new ChromeDriver(DriverLocalPath); 
+        //public static  FactoryDriver(DriverType driverType)
+        //{
+        //    DriverLocalPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        //    switch (driverType)
+        //    {
+        //        case DriverType.ChromeDriver:
+        //            TestScenarioDriver = new ChromeDriver(DriverLocalPath); 
                     
-                    break;
-            }
+        //            break;
+        //    }
 
 
-        }
+        //}
 
         private void AddDriverOptions()
         {
