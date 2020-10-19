@@ -7,6 +7,7 @@ using AutomationProject.Pages;
 using AutomationFramework.Utilities;
 using System.Net.Http;
 using System.IO;
+using System.Net.Http.Headers;
 
 namespace AutomationProject.Test
 {
@@ -41,35 +42,5 @@ namespace AutomationProject.Test
             Assert.AreEqual(DataAccess.getParameterValue("TotalAmount"), checkOutPage.TotalAmount.Text);
         }
 
-        [TestMethod]
-        public void TC2()
-        {
-            string url = String.Format("http://34.205.174.166//wp-json/wc/v3/products/794");
-            HttpMessageHandler handler = new HttpClientHandler()
-            {
-            };
-
-            var httpClient = new HttpClient(handler)
-            {
-                BaseAddress = new Uri(url),
-                Timeout = new TimeSpan(0, 2, 0)
-            };
-
-            httpClient.DefaultRequestHeaders.Add("ContentType", "application/json");
-
-            //This is the key section you were missing    
-            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes("testing:123456");
-            string val = System.Convert.ToBase64String(plainTextBytes);
-            httpClient.DefaultRequestHeaders.Add("Authorization", "Basic " + val);
-
-            HttpResponseMessage response = httpClient.GetAsync(url).Result;
-            string content = string.Empty;
-
-            //using (StreamReader stream = new StreamReader(response.Content.ReadAsStreamAsync().Result, System.Text.Encoding.GetEncoding(_encoding)))
-            //{
-            //    content = stream.ReadToEnd();
-            //}
-
-        }
     }
 }
