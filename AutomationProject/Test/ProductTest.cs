@@ -35,7 +35,9 @@ namespace AutomationProject.Test
             productPage.CartCheckout.Click();
             //Go to CheckOut
             CheckOutPage checkOutPage = new CheckOutPage(WebDriver);
+            //Verify if the product is present
             Assert.AreEqual(DataAccess.getParameterValue("ExpectedProductName"), checkOutPage.productName.Text);
+            //Verify if the amount is the expected
             Assert.AreEqual(DataAccess.getParameterValue("TotalAmount"), checkOutPage.TotalAmount.Text);
         }
 

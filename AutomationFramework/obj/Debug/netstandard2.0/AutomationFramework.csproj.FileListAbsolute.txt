@@ -1,9 +1,9 @@
 C:\Users\aleja\OneDrive\Documentos\GitHub\AutomationGAP\AutomationFramework\bin\Debug\netstandard2.0\AutomationFramework.deps.json
 C:\Users\aleja\OneDrive\Documentos\GitHub\AutomationGAP\AutomationFramework\bin\Debug\netstandard2.0\AutomationFramework.dll
+C:\Users\aleja\OneDrive\Documentos\GitHub\AutomationGAP\AutomationFramework\bin\Debug\netstandard2.0\AutomationFramework.pdb
 C:\Users\aleja\OneDrive\Documentos\GitHub\AutomationGAP\AutomationFramework\obj\Debug\netstandard2.0\AutomationFramework.csprojAssemblyReference.cache
 C:\Users\aleja\OneDrive\Documentos\GitHub\AutomationGAP\AutomationFramework\obj\Debug\netstandard2.0\AutomationFramework.AssemblyInfoInputs.cache
 C:\Users\aleja\OneDrive\Documentos\GitHub\AutomationGAP\AutomationFramework\obj\Debug\netstandard2.0\AutomationFramework.AssemblyInfo.cs
 C:\Users\aleja\OneDrive\Documentos\GitHub\AutomationGAP\AutomationFramework\obj\Debug\netstandard2.0\AutomationFramework.csproj.CoreCompileInputs.cache
-C:\Users\aleja\OneDrive\Documentos\GitHub\AutomationGAP\AutomationFramework\bin\Debug\netstandard2.0\AutomationFramework.pdb
 C:\Users\aleja\OneDrive\Documentos\GitHub\AutomationGAP\AutomationFramework\obj\Debug\netstandard2.0\AutomationFramework.dll
 C:\Users\aleja\OneDrive\Documentos\GitHub\AutomationGAP\AutomationFramework\obj\Debug\netstandard2.0\AutomationFramework.pdb
