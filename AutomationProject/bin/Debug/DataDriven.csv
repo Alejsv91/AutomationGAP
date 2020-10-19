@@ -1,16 +1,9 @@
-﻿TC Name;Keyword;Value;;;
-TC1;ExpectedProductName;Alejandro;;;
-TC1;StartedUrl;http://34.205.174.166/product/Alejandro/;;;
-TC2;TestKey2;Test2;;;
-TC1;ProductValue;$50.00;;;
-TC1;CartProductQuantity;7 items;;;
-;;;;;
-;;;;;
-;;;;;
-;;;;;
-;;;;;
-;;;;;
-;;;;;
-;;;;;
-;;;;;
-;;;;;
+﻿TC Name;Keyword;Value
+TC1;ExpectedProductName;Alejandro
+TC1;StartedUrl;http://34.205.174.166/product/Alejandro/
+TC2;TestKey2;Test2
+TC1;ProductValue;$50.00
+TC1;CartProductQuantity;7 items
+TC1;TotalAmount;$350.00
+TC2;StartedUrl;http://34.205.174.166/product/Alejandro/
+TC2;adadfasd;asdfasdf

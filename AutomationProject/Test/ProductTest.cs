@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using AutomationProject.Pages;
+using AutomationFramework.Utilities;
+using System.Net.Http;
+using System.IO;
 
 namespace AutomationProject.Test
 {
@@ -11,7 +14,7 @@ namespace AutomationProject.Test
     /// Summary description for UnitTest1
     /// </summary>
     [TestClass]
-    public class ProductTest: BaseTest
+    public class ProductTest : BaseTest
     {
         [TestMethod]
         public void TC1()
@@ -32,10 +35,38 @@ namespace AutomationProject.Test
             productPage.CartCheckout.Click();
             //Go to CheckOut
             CheckOutPage checkOutPage = new CheckOutPage(WebDriver);
-            Assert.AreEqual(DataAccess.getParameterValue("ExpectedProductName"), checkOutPage.productName);
-            Assert.AreEqual(DataAccess.getParameterValue("TotalAmount"), checkOutPage.TotalAmount);
+            Assert.AreEqual(DataAccess.getParameterValue("ExpectedProductName"), checkOutPage.productName.Text);
+            Assert.AreEqual(DataAccess.getParameterValue("TotalAmount"), checkOutPage.TotalAmount.Text);
+        }
 
+        [TestMethod]
+        public void TC2()
+        {
+            string url = String.Format("http://34.205.174.166//wp-json/wc/v3/products/794");
+            HttpMessageHandler handler = new HttpClientHandler()
+            {
+            };
 
+            var httpClient = new HttpClient(handler)
+            {
+                BaseAddress = new Uri(url),
+                Timeout = new TimeSpan(0, 2, 0)
+            };
+
+            httpClient.DefaultRequestHeaders.Add("ContentType", "application/json");
+
+            //This is the key section you were missing    
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes("testing:123456");
+            string val = System.Convert.ToBase64String(plainTextBytes);
+            httpClient.DefaultRequestHeaders.Add("Authorization", "Basic " + val);
+
+            HttpResponseMessage response = httpClient.GetAsync(url).Result;
+            string content = string.Empty;
+
+            //using (StreamReader stream = new StreamReader(response.Content.ReadAsStreamAsync().Result, System.Text.Encoding.GetEncoding(_encoding)))
+            //{
+            //    content = stream.ReadToEnd();
+            //}
 
         }
     }
